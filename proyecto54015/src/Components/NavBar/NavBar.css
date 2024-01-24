@@ -1,0 +1,22 @@
+
+Nav{
+    background-color: rgba(98, 191, 134, 0.537);
+    position: sticky;
+    font-weight: 500;
+    justify-content: center;
+}
+
+Nav div{
+    align-items:center ;
+
+}
+
+Nav div a{
+    align-items:center;
+    text-align: center;
+}
+
+.me-auto a{
+    margin-left: 30px;
+    margin-right: 30px;
+}
