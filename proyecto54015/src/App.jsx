@@ -2,13 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import NavBar from './Components/NavBar/NavBar.jsx'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer.jsx'
-import CartWidget from './Components/CartWidget/CartWidget.jsx'
+import Contador from './Components/Contador.jsx'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer.jsx'
 import './App.css'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+export function App(){
+  return(
+    <BrowserRouter>
     <NavBar/>
-    <ItemListContainer greeting='Bienvenidos a mi E-Comerce!'/>
-  </React.StrictMode>
-)
+      <Routes>
+        <Route path="/" element={<ItemListContainer/>}/>
+        <Route path="/categoria/:categoryId" element={<ItemListContainer/>}/>
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+

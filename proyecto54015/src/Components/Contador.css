@@ -1,0 +1,23 @@
+.contador{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.contador h2{
+    margin: 20px;
+}
+
+.contador button{
+    border: none;
+    background-color: rgba(114, 232, 199, 0.619);
+    padding: 10px;
+    margin: 10px;
+    width: 40px;
+    border-radius: 10px;
+    transition-duration: .2s;
+}
+
+.contador button:hover{
+    background-color: rgba(101, 192, 166, 0.619);
+}

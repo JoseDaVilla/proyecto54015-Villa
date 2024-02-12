@@ -1,4 +1,54 @@
-h1{
+.itemlist {
+    display: flex;
     text-align: center;
+    justify-content: center;
 }
 
+.itemlist p {
+    text-align: center;
+    animation: parpadear 1s alternate .5s infinite;
+    margin-top: 20px;
+    font-size: 25px;
+    display: inline-block;
+}
+
+@keyframes parpadear {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: .6;
+    }
+
+    100% {
+        scale: 1.1;
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.loading {
+    border: 30px dotted rgba(37, 148, 117, 0.619);;
+    background-color: white;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    animation: loading 2s infinite linear;
+}
