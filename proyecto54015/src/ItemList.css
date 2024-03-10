@@ -14,10 +14,11 @@
     width: 400px;
     height: 350px;
     box-sizing: border-box;
-    background-color: rgba(169, 237, 237, 0.665);
+    background-color: #94cc94;
     border: none;
     border-radius: 20px;
     transition-duration: .5s;
+    text-decoration: none;
 }
 
 .card:hover{
@@ -36,4 +37,5 @@
 .card p{
     font-weight: 700;
     font-size: larger;
+    
 }

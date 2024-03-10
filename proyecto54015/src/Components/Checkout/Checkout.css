@@ -1,0 +1,76 @@
+.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.checkout form{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(15, 146, 146, 0.755);
+    box-shadow: rgba(0, 0, 0, 0.359) 10px 10px 10px;
+    
+    border: none;
+    border-radius: 20px;
+    transition-duration: .5s;
+    width: max-content;
+}
+
+.checkout form label{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: large;
+}
+
+.checkout form div{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    width: 60%;
+}
+
+.checkout button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 20px;
+}
+
+button{
+    border: none;
+    background-color: rgba(114, 232, 199, 0.619);
+    padding: 20px;
+    margin: 10px;
+    width:fit-content;
+    border-radius: 10px;
+    transition-duration: .2s;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+button:hover{
+    background-color: rgba(101, 192, 166, 0.619);
+}
+
+.checkout input{
+    margin: 10px;
+    width: 300px;
+    border-radius: 5px;
+    padding: 4px;
+    border: none;
+    margin-inline-start: 10px;
+    justify-content: center ;
+    outline: none ;
+}

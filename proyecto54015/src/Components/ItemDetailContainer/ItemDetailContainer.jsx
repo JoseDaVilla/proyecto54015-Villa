@@ -1,41 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './ItemDetailContainer.css'
-import productos from '../../../productos.json'; 
-import Contador from '../Contador'
+import './ItemDetailContainer.css';
+import { useCart } from '../CartWidget/CartContext'; 
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 export default function ItemDetailContainer() {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState(null);
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
+    const [count, setCount] = useState(0);
+    const { addItem } = useCart();
+
 
     useEffect(() => {
         setIsLoading(true);
-    
-    const productId = parseInt(id);
-    const foundProduct = productos.find(product => product.id === productId);
-    
-    if (foundProduct) {
-        setProduct(foundProduct);
-    } else {
-        console.error('Producto no encontrado');
-    }
-    setIsLoading(false); 
+        const db = getFirestore();
+        const productsRef = collection(db, "productos");
+        
+        const q = query(productsRef, where("id", "==", parseInt(id)));
+
+        const getProduct = async () => {
+            const querySnapshot = await getDocs(q);
+            if (!querySnapshot.empty) {
+                
+                const docData = querySnapshot.docs[0].data();
+                setProduct({ id: querySnapshot.docs[0].id, ...docData });
+            } else {
+                console.error('Producto no encontrado');
+            }
+            setIsLoading(false);
+        };
+
+        getProduct();
     }, [id]);
-
-    if (isLoading) {
-        return <div>Cargando detalles del producto...</div>; // Mostrar esto mientras isLoading sea true
-    }
-
-
+    
     return (
-    <div className='ItemDetailContainer'>
-        <img src={product.img} alt={product.name} />
-        <h2>{product.name}</h2>
-        <p>Piezas disponibles: {product.stock}</p>
-        <p>Precio: {product.price} COP</p>
-        <Contador stock={product.stock}/>
-        <button>AGREGAR</button>
-    </div>
+        <div className='ItemDetailContainer'>
+            {product ? <ItemDetail product={product} /> : <p>Cargando...</p>}
+        </div>
     );
 }

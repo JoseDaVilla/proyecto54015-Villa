@@ -1,11 +1,14 @@
 
 
 Nav{
-    background-color: rgba(98, 191, 134, 0.537);
+    background-color: #B5EBB7;
     font-weight: 500;
     
 }
 
+a{
+    text-decoration: none;
+}
 .nav-container {
     width: 100%;
     display: flex;
@@ -19,12 +22,20 @@ Nav{
 .bi-brush{
     text-decoration: none;
     font-size: 50px;
-    background-color: rgb(235, 170, 110);  
+    background-color: #B5EBB7;  
     color: black;
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
+    transition-duration: .5s;
 }
+
+.bi-brush:hover{
+    animation: parpadear .7s alternate .2s 7.5;
+    color: rgba(5, 117, 117, 0.755);
+}
+
+
 
     .cart-link {
     display: flex;
@@ -53,7 +64,7 @@ Nav{
 }
 
 .links-container a:hover{
-    background-color: rgba(98, 191, 134, 0.772);
+    background-color:#90ba92;
     color: rgb(255, 255, 255);
 }
 

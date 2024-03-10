@@ -10,11 +10,19 @@
 .CartWidget i{
     font-size: 2rem;
     color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.CartWidget span {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
 }
 
 .CartWidget:hover{
-    animation: parpadear .7s alternate .6s 7.5;
+    animation: parpadear .7s alternate .2s 7.5;
     &.CartWidget i:hover{
         color: rgba(5, 117, 117, 0.755);
-    }
+    }   
 }

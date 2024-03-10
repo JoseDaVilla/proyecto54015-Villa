@@ -6,12 +6,13 @@
     justify-content: space-around;
     padding: 10px;
     box-sizing: border-box;
-    background-color: rgba(5, 117, 117, 0.755);
+    background-color: rgba(15, 146, 146, 0.755);
     box-shadow: rgba(0, 0, 0, 0.359) 10px 10px 10px;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 20px;
     transition-duration: .5s;
+    font-weight: 500;
 }
 
 .ItemDetailContainer img{
@@ -20,16 +21,3 @@
     border-radius: 20px;
 }
 
-.ItemDetailContainer button{
-    border: none;
-    background-color: rgba(114, 232, 199, 0.619);
-    padding: 10px;
-    margin: 10px;
-    font-weight: 700;
-    border-radius: 10px;
-    transition-duration: .2s;
-}
-
-.ItemDetailContainer button:hover{
-    background-color: rgba(101, 192, 166, 0.619);
-}
